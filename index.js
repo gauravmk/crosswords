@@ -1,6 +1,8 @@
 const express = require("express");
 const rp = require("request-promise");
 const app = express();
+app.use(express.static('public'))
+app.set('view engine', 'pug')
 
 app.get("/", function(req, res) {
   res.send("Dat Crossword Site");
@@ -14,7 +16,7 @@ app.get("/:year-:month-:day", function(req, res) {
   jar.setCookie(cookie, url)
   rp({ url, jar, json: true }).then((jsonResp) => {
     const puzz = jsonResp.results[0].puzzle_data;
-    res.send(JSON.stringify(puzz.layout, null, 2));
+    res.render('index', puzz);
   });
 });
 
