@@ -16,7 +16,7 @@ app.get("/:year-:month-:day", function(req, res) {
   jar.setCookie(cookie, url)
   rp({ url, jar, json: true }).then((jsonResp) => {
     const puzz = jsonResp.results[0].puzzle_data;
-    res.render('index', puzz);
+    res.render('index', { puzz });
   });
 });
 

@@ -1,17 +1,13 @@
 doctype html
 html(lang="en")
   head
-    title= pageTitle
+    title CollabCrosswords
+    script(src='https://code.jquery.com/jquery-3.2.1.min.js', integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=', crossorigin='anonymous')
+    script(src='crossword.js')
     script(type='text/javascript').
-      if (foo) bar(1 + 5)
+      var puzzData = !{JSON.stringify(puzz)}
+    script(type='text/javascript').
+      $(() => createEmptyCrossword())
+    link(rel='stylesheet', href='crossword.css')
   body
-    h1 Pug - node template engine
-    #container.col
-      if youAreUsingPug
-        p You are amazing
-      else
-        p Get on it!
-      p.
-        Pug is a terse and simple templating language with a
-        strong focus on performance and powerful features.
-
+    #puzzContainer
