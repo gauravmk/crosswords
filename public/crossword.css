@@ -1,14 +1,41 @@
-#puzzContainer {
-  position: absolute;
+#container {
   margin-left: 100px;
-  margin-top: 100px;
+  margin-top: 50px;
+  display: flex;
+}
+
+#puzzContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+#puzzRules {
+  display: flex;
+}
+
+.ruleCol {
+  width: 200px;
+  margin-left: 40px;
+  height: 700px;
+  overflow-y: scroll;
+}
+
+.ruleRow {
+  margin-bottom: 10px;
 }
 
 .puzzSquare {
   width: 40px;
   height: 40px;
   border: 1px solid black;
-  position: absolute;
+  margin: -1px 0 0 -1px;
+}
+
+.clueNum {
+  margin-left: 3px;
+  margin-top: 1px;
+  font-size: 12px;
 }
 
 .black {
