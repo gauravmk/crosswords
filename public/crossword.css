@@ -37,12 +37,18 @@
   margin-left: 3px;
   margin-top: 1px;
   font-size: 12px;
+  user-select: none;
+  cursor: default;
 }
 
 .black {
   background-color: black;
 }
 
+.highlighted {
+  background-color: #a7d8ff;
+}
+
 .selected {
-  background-color: yellow;
+  background-color: #ffda00;
 }

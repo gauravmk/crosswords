@@ -40,15 +40,17 @@ function drawGrid() {
       let clueSquare = $(`div[data-squareNum='${val}']`);
       while (!clueSquare.hasClass("black")) {
         clueSquare.attr(`data-dir-${dir}`, key);
-        const curSquareNum = clueSquare.data('squarenum')
         // Advance
         if (dir === 'A') {
-          if ((curSquareNum + 1) % Math.sqrt(puzzData.layout.length) == 0) {
+          if (clueSquare.data('j') === size - 1) {
             break;
           }
-          clueSquare = $(`div[data-squareNum='${curSquareNum + 1}'`);
+          clueSquare = $(`div[data-squareNum='${clueSquare.data('squarenum') + 1}'`);
         } else {
-          break;
+          if (clueSquare.data('i') === size - 1) {
+            break
+          }
+          clueSquare = $(`div[data-squareNum='${clueSquare.data('squarenum') + size}'`);
         }
       }
     }
